@@ -31,11 +31,32 @@ public class GameActivity extends AppCompatActivity {
             public void onClick(View view) {
                 g.move('r');
             }
-           }
-        );
+        });
 
-//        player = (TextView) findViewById(R.id.player)
+        Button left = (Button) findViewById(R.id.left);
+        right.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                g.move('l');
+            }
+        });
 
+        Button up = (Button) findViewById(R.id.up);
+        right.setOnClickListener(new View.OnClickListener() {
+            @Override
+                public void onClick(View view) {
+            g.move('u');
+            }
+        });
+
+        Button down = (Button) findViewById(R.id.down);
+        right.setOnClickListener(new View.OnClickListener() {
+            @Override
+                public void onClick(View view) {
+            g.move('d');
+            }
+        });
+        
     }
 
 }
