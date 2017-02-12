@@ -5,9 +5,21 @@ package com.example.francis.hoth;
  */
 
 public class Game {
+
+    Game(){
+        game_state = 1;
+    }
+    int game_state;
     Statics[][] gameDisplay = new Statics[8][8];
     Player player;
     EndGate end_gate;
+
+    int run() {
+        while (game_state == 1){
+            
+        }
+        return 0;
+    }
 
     public boolean canMoveTo(int x, int y) {
         boolean end_gate_val = true;
