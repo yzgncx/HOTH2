@@ -6,6 +6,9 @@ package com.example.francis.hoth;
 
 public class Statics extends GraphObject {
     boolean penetrable;
+    public boolean isPenetrable() {
+        return  penetrable;
+    }
 }
 
 class Wall extends Statics {
@@ -22,4 +25,13 @@ class Floor extends Statics {
         s_x = x;
         s_y = y;
     }
+}
+
+class EndGate extends Statics {
+    EndGate(int x, int y, int a) {
+        accepting_value = a;
+        s_x = x;
+        s_y = y;
+    }
+    int accepting_value;
 }

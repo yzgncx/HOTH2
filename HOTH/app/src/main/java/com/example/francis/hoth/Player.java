@@ -7,6 +7,9 @@ package com.example.francis.hoth;
 public class Player extends GraphObject {
     //player_value is the integer value contained by the player's box.
     int player_value;
+    public int getPlayerValue() {
+        return player_value;
+    }
     public void modPlayerValue(int n, char op) {
         switch (op) {
             case '+':
