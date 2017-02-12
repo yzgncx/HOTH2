@@ -5,7 +5,11 @@ package com.example.francis.hoth;
  */
 
 public class Game {
-    GraphObject[][] gameDisplay = new GraphObject[8][8];
+    Statics[][] gameDisplay = new Statics[8][8];
     Player player;
+
+    public boolean canMoveTo(int x, int y) {
+        return gameDisplay[x][y].penetrable;
+    }
 }
 
