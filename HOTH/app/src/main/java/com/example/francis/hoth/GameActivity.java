@@ -11,6 +11,7 @@ import android.widget.TextView;
 public class GameActivity extends AppCompatActivity {
 
     ImageView imageView;
+    Game g = new Game();
 
     @Override
     public View findViewById(@IdRes int id) {
@@ -23,10 +24,19 @@ public class GameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
+        Button right = (Button) findViewById(R.id.right);
+        right.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                g.move('r');
+            }
+           }
+        );
+
+//        player = (TextView) findViewById(R.id.player)
+
     }
 
-    public void moveUp(View v){
-
-    }
 }
 

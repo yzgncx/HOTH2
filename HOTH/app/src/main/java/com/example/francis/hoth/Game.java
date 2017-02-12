@@ -6,19 +6,37 @@ package com.example.francis.hoth;
 
 public class Game {
 
-    Game(){
-        game_state = 1;
-    }
-    int game_state;
+    Game(){}
+
     Statics[][] gameDisplay = new Statics[8][8];
     Player player;
     EndGate end_gate;
 
-    int run() {
-        while (game_state == 1){
-            
+    public boolean move(char c) {
+        int x = 0;
+        int y = 0;
+        switch (c) {
+            case 'r':
+                x = 1;
+                break;
+            case 'l':
+                x = -1;
+                break;
+            case 'u':
+                y = -1;
+                break;
+            case 'd':
+                y = 1;
+                break;
+            default:
+                return false;
         }
-        return 0;
+        if (canMoveTo(player.s_x + x, player.s_y + y)) {
+            player.s_x += x;
+            player.s_y += y;
+            return true;
+        }
+        else return false;
     }
 
     public boolean canMoveTo(int x, int y) {
