@@ -25,6 +25,22 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
+       //checks Drawable object name to assign the right object at each position in game.gameDisplay
+        for (int i = 0; i<8 ; i++)
+            for (int j=0; j<8; j++)
+            {
+                String gridID = "grid."+i+"."+j;
+                int resID = getResources().getIdentifier(gridID, "id", getPackageName());
+                Drawable d = getDrawable(resID);
+                String name = getResources().getResourceEntryName(resID);
+                if (name == "wall")
+                    game.gameDisplay[i][j] = new Wall(i,j);
+                else if (name == "gate")
+                    game.gameDisplay[i][j] = new EndGate(i,j,10); //value arbtrarily set
+                else if (name == "floor")
+                    game.gameDisplay[i][j] = new Floor(i,j);
+            }
+            
         Button right = (Button) findViewById(R.id.right);
         right.setOnClickListener(new View.OnClickListener() {
             @Override
