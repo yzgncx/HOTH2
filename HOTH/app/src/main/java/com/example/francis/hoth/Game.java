@@ -16,6 +16,6 @@ public class Game {
         }
         return gameDisplay[x][y].isPenetrable() && end_gate_val;
     }
-    
+
 }
 
