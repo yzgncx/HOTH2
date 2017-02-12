@@ -7,16 +7,10 @@ package com.example.francis.hoth;
 public class Game {
     Statics[][] gameDisplay = new Statics[8][8];
     Player player;
-<<<<<<< HEAD
 
     public static final int TILE_LEN = 40;    // in units of dp
 
-    public GraphObject getObject(int x, int y)
-    {
-    	if (x>=0 && x<8 && y>=0 && y<8)
-	    	return gameDisplay[x][y];
-	    return null;
-    }
+
 
     public void moveUp(View view)
     {
